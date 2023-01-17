@@ -17,6 +17,31 @@ public:
 	return false;
 	}
 };
+// Best
+class SolutionII {
+public:
+    bool isSubsequence(std::string s, std::string t) {
+        int strCount = 0;
+        int start = 0,end = t.length();
+
+        std::string str;
+
+        while(start < end && strCount < s.length()){
+            if(s[strCount] == t[start]){
+                str.push_back(t[start]);
+                strCount++;
+            }
+            start++;
+        }
+
+        if(s==str)
+            return true;
+        else
+            return false;
+    }
+};
+
+
 
 int main(int argc, char* argv[])
 {
@@ -24,5 +49,8 @@ int main(int argc, char* argv[])
 	std::cout << std::boolalpha << s1.isSubsequence("abc", "ahbgdc") << "\n";
 	std::cout << std::boolalpha << s1.isSubsequence("axc", "ahbgdc") << "\n";
 
+	SolutionII s1_1;
+	std::cout << std::boolalpha << s1_1.isSubsequence("abc", "ahbgdc") << "\n";
+	std::cout << std::boolalpha << s1_1.isSubsequence("axc", "ahbgdc") << "\n";
 	return 0;
 }
