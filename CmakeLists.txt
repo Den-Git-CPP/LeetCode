@@ -1,7 +1,8 @@
 cmake_minimum_required(VERSION 3.10)
 
 project(LeetCode)
-file(GLOB SRC_FILES "${CMAKE_CURRENT_SOURCE_DIR}/*.cpp")
+file(GLOB SRC_FILES 
+	"${CMAKE_CURRENT_SOURCE_DIR}/*.cpp")
 
 foreach(src_file ${SRC_FILES})
     get_filename_component(target ${src_file} NAME_WLE)
